@@ -45,14 +45,15 @@ public class MainActivity extends Activity {
     public void salvarFilme(View v){
         String nome = editNome.getText().toString();
         String genero = spinnerGenero.getSelectedItem().toString();
-        int nota = spinnerNota.getSelectedItem();
+        int nota = Integer.parseInt(spinnerNota.getSelectedItem().toString());
 
-        Filme F = new Filme();
-        a.setNome(nome);
-        a.setGenero(genero);
+        Filme f = new Filme();
+        f.setNome(nome);
+        f.setGenero(genero);
+        f.setNota(nota);
 
 
-        artistas.add(a);
-        atualizarArtistas();
+        filmes.add(f);
+        atualizarRanking();
     }
 }
